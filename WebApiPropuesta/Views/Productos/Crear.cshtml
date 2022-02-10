@@ -1,0 +1,66 @@
+﻿@model WebApiPropuesta.DTOs.ProductosDTO
+
+@{
+    ViewData["Title"] = "Crear";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Crear</h1>
+
+<h4>Productos</h4>
+<hr />
+<div class="row">
+    <div class="col-md-10">
+        <form asp-action="Crear">
+            
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Descripción" class="control-label"></label>
+                <input asp-for="Descripción" class="form-control" />
+                <span asp-validation-for="Descripción" class="text-danger"></span>
+            </div>
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input"  asp-for="Estado" disabled /> @Html.DisplayNameFor(model => model.Estado )
+                </label>
+            </div>
+            <div class="form-group">
+                <label asp-for="Fecha_fabricación" class="control-label"></label>
+                <input asp-for="Fecha_fabricación" class="form-control" />
+                <span asp-validation-for="Fecha_fabricación" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Fecha_validez" class="control-label"></label>
+                <input asp-for="Fecha_validez" class="form-control" />
+                <span asp-validation-for="Fecha_validez" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Cod_proveedor" class="control-label"></label>
+                <input asp-for="Cod_proveedor" class="form-control" />
+                <span asp-validation-for="Cod_proveedor" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Descripción_proveedor" class="control-label"></label>
+                <input asp-for="Descripción_proveedor" class="form-control" />
+                <span asp-validation-for="Descripción_proveedor" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TelefonoProveedor" class="control-label"></label>
+                <input asp-for="TelefonoProveedor" class="form-control" />
+                <span asp-validation-for="TelefonoProveedor" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Crear Producto" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts{
+    @{ <partial name="_ValidationScriptsPartial" /> }
+}
+
